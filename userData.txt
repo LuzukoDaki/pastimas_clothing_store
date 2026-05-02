@@ -1,0 +1,5 @@
+John Doe,j.doe@abc.co.za,29ef52e7563626a96cea7f4b4085c124
+Mary Smith,m.smith@gmail.com,123abc456def789ghi
+Peter Jones,p.jones@yahoo.com,9f8e7d6c5b4a321xyz
+Sarah Brown,s.brown@outlook.com,abc123xyz789456
+David White,d.white@mail.com,passhash99887766 
