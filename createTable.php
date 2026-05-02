@@ -15,34 +15,53 @@ $sqlCreate = "CREATE TABLE tblUser (
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
+    
+    /* added pending status column */
+    status VARCHAR(20) DEFAULT 'pending',
+
     date_registered TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
 
-if(mysqli_query($conn, $sqlCreate)){
+if(mysqli_query($conn, $sqlCreate)){ 
     echo "tblUser created successfully.<br>";
+} else {
+    echo "Error creating table: " . mysqli_error($conn) . "<br>";
 }
 
 // This code ought to Open userData.txt
 $file = fopen("userData.txt", "r");
 
+if($file){
 // This code ought to Read each line
 while(($line = fgets($file)) !== false){
 
     $data = explode(",", trim($line));
-
     $name = $data[0];
-    $email = $data[1];
-    $password = $data[2];
 
-    $sqlInsert = "INSERT INTO tblUser(full_name,email,password_hash)
-                  VALUES('$name','$email','$password')";
+    $username = $data[1];
+    $status = $data[4];
 
-    mysqli_query($conn, $sqlInsert);
+    $email = $data[2];
+    $password = $data[3];
+
+    $sqlInsert = "INSERT INTO tblUser(full_name, username, email, password_hash, status)
+                  VALUES('$name','$username','$email','$password','$status')";
+
+  if(mysqli_query($conn, $sqlInsert)){
+            echo "Inserted: $name <br>";
+        } else {
+            echo "Error inserting $name: " . mysqli_error($conn) . "<br>";
+        }
+
 }
 
 fclose($file);
 
 echo "Data loaded successfully.";
+
+} else {
+    echo "Error opening userData.txt<br>";
+}
 
 mysqli_close($conn);
 
