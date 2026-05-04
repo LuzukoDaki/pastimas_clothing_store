@@ -13,6 +13,10 @@ if(mysqli_query($conn, $sqlDrop)){
 $sqlCreate = "CREATE TABLE tblUser (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
+
+     /* added username */
+     username VARCHAR(100) NOT NULL UNIQUE,
+
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
     

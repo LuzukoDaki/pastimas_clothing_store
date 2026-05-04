@@ -191,7 +191,7 @@ mysqli_close($conn);
         </div>
       <?php endif; ?>
 
-      <form method="POST" action="register.php" class="space-y-8">
+      <form method="POST" action="registration.php" class="space-y-8">
         <div class="space-y-6">
 
           <!-- Full Name -->

@@ -1,0 +1,7 @@
+clothesdata.txt
+
+Leather Jacket,Outerwear,M,Black,450.00,3,Vintage leather biker jacket
+Denim Jeans,Bottoms,32,Blue,120.00,5,Classic straight cut denim
+White Shirt,Tops,L,White,80.00,8,Crisp cotton button up shirt
+Wool Coat,Outerwear,S,Camel,380.00,2,Long wool winter coat
+Silk Dress,Dresses,M,Navy,220.00,4,Elegant silk midi dress
